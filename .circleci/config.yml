@@ -39,6 +39,10 @@ jobs:
             - ~/.cache
           key: v3-dep-{{ checksum "yarn.lock" }}
       - run:
+          name: Run build:ssr
+          command: |
+            yarn build:ssr
+      - run:
           name: Run tests
           command: |
             yarn test
